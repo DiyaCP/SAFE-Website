@@ -48,22 +48,18 @@ cd SAFE
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](/assets/images/screen1.jpg)
+![Screenshot1](/assets/images/screen1.png)
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
+![Screenshot2](/assets/images/screen2.png)
 *Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
+![Screenshot3](/assets/images/screen3.png)
 *Add caption explaining what this shows*
 
 
 # Build Photos
 ![Team](Add photo of your team here)
-
-
-![Components](Add photo of your components here)
-*List out all components shown*
 
 ![Build](Add photos of build process here)
 *Explain the build steps*
@@ -73,16 +69,16 @@ For Software:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
+[Video Link is here](https://drive.google.com/file/d/1L1ilx37S2ouwEf0cqrVGuz9EZFzNQSQn/view?usp=drivesdk)
 *Explain what the video demonstrates*
 
 # Additional Demos
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Diya Pauly: Code
+- Alina Anna Eappan: Idea
+- Sneha T s: Design
 
 ---
 Made with ❤️ at TinkerHub
