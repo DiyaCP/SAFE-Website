@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        button {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+            margin-bottom: 1rem; /* Add spacing for the second button */
+        }
+
+        button:hover {
+            background-color: #ff3b2d;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+            box-shadow: none;
+        }
+
+        .blue-button {
+            background-color: #2575fc; /* Blue color */
+        }
+
+        .blue-button:hover {
+            background-color: #1c59c9; /* Darker blue on hover */
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <script>
+        function showMessage() {
+            alert("We are dialing your number now!");
+            window.location.href = 'tel:+123456789000';
+        }
+
+        function goHome() {
+            window.location.href ="index.html";  // Modify this to your home page URL if needed
+        }
+    </script>
+</head>
+<body>
+
+    <div>
+        <h1>Contact Us</h1>
+        <p>If you need any assistance, please click the button below to call us:</p>
+        <button onclick="showMessage()">Call Us</button>
+        <p>We’re here to help you 24/7!</p>
+        <button class="blue-button" onclick="goHome()">Home</button> <!-- Button Text Changed to "Home" -->
+    </div>
+
+</body>
+</html>

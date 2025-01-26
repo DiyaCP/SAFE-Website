@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFE</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('../assets/images/hands-stacked.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 15%;
+            font-size: 3em;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .button-container button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            font-size: 1.2em;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Red and round Call Button styling */
+        .button-container button#callButton {
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 20px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container button#callButton:hover {
+            background-color: darkred;
+        }
+
+        .hero-image {
+            display: block;
+            margin: 30px auto;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 0px;
+            text-align: center;
+            color: #ffffff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .container {
+            padding: 0px;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin-top: 80px;
+            border-radius: 8px;
+            max-width: 80%;
+            margin: 80px auto;
+        }
+
+        /* Chatbox styling */
+        #chatBox {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 8px;
+            padding: 10px;
+            display: none; /* Initially hidden */
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        #chatBoxHeader {
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #chatMessages {
+            height: 80%;
+            overflow-y: auto;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #333;
+        }
+
+        #chatButton {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        #chatButton:hover {
+            background-color: #0056b3;
+        }
+
+        /* FAQ Section styling */
+        .faq-question {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .faq-answer {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-size: 1em;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to SAFE</h1>
+        <p>Your one-stop platform for legal aid for women.</p>
+
+        <div class="button-container">
+            <button onclick="location.href='resources.html'">Resources</button>
+            <button id="callButton" onclick="location.href='callbutton.html'">Call</button>
+            <button onclick="location.href='contact.html'">Contact</button>
+        </div>
+
+        <img src="images/hands-stacked.jpg" class="hero-image">
+
+        <p>Access legal information, connect with legal professionals, and get support in emergencies.</p>
+    </div>
+
+    <!-- Chatbox -->
+    <div id="chatBox">
+        <div id="chatBoxHeader">FAQs</div>
+        <div id="chatMessages">
+            <!-- FAQ Questions in the Chatbox -->
+            <div class="faq-question" onmouseover="toggleAnswer(0)">What are my rights as a woman in India?</div>
+            <div class="faq-answer" id="answer0" data-text="As a woman in India, you have the right to equality, protection from violence, and access to education, employment, and healthcare. You also have legal protections against domestic violence, sexual harassment, and discrimination."></div>
+
+            <div class="faq-question" onmouseover="toggleAnswer(1)">How do I file a case for domestic violence?</div>
+            <div class="faq-answer" id="answer1" data-text="To file a case for domestic violence, you need to approach the police or a court, and you can seek help from legal professionals who specialize in family law. The Protection of Women from Domestic Violence Act provides a legal framework for protection."></div>
+
+            <div class="faq-question" onmouseover="toggleAnswer(2)">What should I do if I am a victim of sexual harassment?</div>
+            <div class="faq-answer" id="answer2" data-text="If you are a victim of sexual harassment, you should report the incident to the police or file a complaint at the workplace under the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013."></div>
+
+            <div class="faq-question" onmouseover="toggleAnswer(3)">How can I access legal aid for free?</div>
+            <div class="faq-answer" id="answer3" data-text="You can access free legal aid through government-supported Legal Services Authorities, or through NGOs and women's rights organizations that offer pro bono services. You can also approach the court for free legal representation if you cannot afford a lawyer."></div>
+
+            <div class="faq-question" onmouseover="toggleAnswer(4)">What is the Protection of Women from Domestic Violence Act, 2005?</div>
+            <div class="faq-answer" id="answer4" data-text="The Protection of Women from Domestic Violence Act, 2005, provides a legal framework for the protection of women from domestic violence. It ensures legal remedies such as protection orders, residence orders, and monetary reliefs to women facing domestic abuse."></div>
+
+            <div class="faq-question" onmouseover="toggleAnswer(5)">What is the legal age for marriage for women in India?</div>
+            <div class="faq-answer" id="answer5" data-text="In India, the legal age for marriage for women is 18 years as per the Prohibition of Child Marriage Act, 2006."></div>
+
+            <div class="faq-question" onmouseover="toggleAnswer(6)">Can I get a divorce on grounds of cruelty?</div>
+            <div class="faq-answer" id="answer6" data-text="Yes, under Indian law, cruelty is one of the grounds for divorce. It can include both physical and mental cruelty. You can file for divorce under the Indian Divorce Act or the Hindu Marriage Act, depending on your personal laws."></div>
+
+            <div class="faq-question" onmouseover="toggleAnswer(7)">What are the legal provisions for sexual assault in India?</div>
+            <div class="faq-answer" id="answer7" data-text="Sexual assault in India is covered under Section 375 of the Indian Penal Code, which defines rape and other forms of sexual violence. The law provides for strict punishment for offenders and ensures justice for the victims of sexual assault."></div>
+        </div>
+    </div>
+
+    <!-- Chat Button -->
+    <button id="chatButton" onclick="toggleChat()">💬</button>
+
+    <footer>
+        <p>&copy; 2025 SAFE. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentAnswerIndex = null; // Keep track of the currently opened answer
+
+        function toggleChat() {
+            const chatBox = document.getElementById('chatBox');
+            if (chatBox.style.display === 'none' || chatBox.style.display === '') {
+                chatBox.style.display = 'flex'; // Show the chatbox
+            } else {
+                chatBox.style.display = 'none'; // Hide the chatbox
+            }
+        }
+
+        // Typewriting effect function
+        function typeAnswer(index) {
+            const answerElement = document.getElementById(`answer${index}`);
+            const text = answerElement.getAttribute("data-text");
+            let i = 0;
+
+            answerElement.innerHTML = ''; // Clear the answer before typing
+            answerElement.style.display = 'block'; // Ensure the answer is visible
+
+            function typeWriter() {
+                if (i < text.length) {
+                    answerElement.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50); // Adjust typing speed here
+                }
+            }
+
+            typeWriter();
+        }
+
+        // Toggle the visibility of the answer and apply typing effect
+        function toggleAnswer(index) {
+            const answer = document.getElementById(`answer${index}`);
+            
+            // Hide the currently open answer, if any, and reset its content
+            if (currentAnswerIndex !== null && currentAnswerIndex !== index) {
+                const currentAnswer = document.getElementById(`answer${currentAnswerIndex}`);
+                currentAnswer.style.display = 'none';
+                currentAnswer.innerHTML = ''; // Clear the previous content
+            }
+
+            // If the selected answer is not already displayed, display and type it
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                currentAnswerIndex = index; // Set the current answer index to the selected one
+                typeAnswer(index); // Call the typing effect function
+            } else {
+                answer.style.display = 'none'; // Hide the answer if it's already displayed
+            }
+        }
+    </script>
+
+</body>
+</html>
